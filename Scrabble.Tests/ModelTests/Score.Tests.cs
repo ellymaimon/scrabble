@@ -20,7 +20,7 @@ namespace Scrabble.Tests
         public void GetSetInputtedWord_GetsSetsInputtedWord_True()
         {
             Score newScore = new Score();
-            string test = "Hello";
+            string test = "hello";
             newScore.SetInputtedWord(test);
             Assert.AreEqual(test, newScore.GetInputtedWord());
         }
@@ -61,6 +61,39 @@ namespace Scrabble.Tests
             newScore.SetInputtedWordLetters(test);
             newScore.LettersIntoPoints();
             Assert.AreEqual(7, newScore.GetFinalScore());
+        }
+
+        [TestMethod]
+        public void WordIntoPoints_TurnsWordIntoPoints_True()
+        {
+            Score newScore = new Score();
+            string test = "chicken";
+            newScore.SetInputtedWord(test);
+            newScore.WordIntoLetters();
+            newScore.LettersIntoPoints();
+            Assert.AreEqual(18, newScore.GetFinalScore());
+        }
+
+        [TestMethod]
+        public void WordsIntoPoints_TurnsWordsIntoPoints_True()
+        {
+            Score newScore = new Score();
+            string test = "chicken chicken";
+            newScore.SetInputtedWord(test);
+            newScore.WordIntoLetters();
+            newScore.LettersIntoPoints();
+            Assert.AreEqual(36, newScore.GetFinalScore());
+        }
+
+        [TestMethod]
+        public void CapitalWordIntoPoints_TurnsCapitalWordIntoPoints_True()
+        {
+            Score newScore = new Score();
+            string test = "Chicken";
+            newScore.SetInputtedWord(test);
+            newScore.WordIntoLetters();
+            newScore.LettersIntoPoints();
+            Assert.AreEqual(18, newScore.GetFinalScore());
         }
     }
 }

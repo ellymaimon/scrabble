@@ -11,7 +11,7 @@ namespace Scrabble
 
         public void SetInputtedWord(string inputtedWord)
         {
-            _inputtedWord = inputtedWord;
+            _inputtedWord = inputtedWord.ToLower();
         }
 
         public string GetInputtedWord()
@@ -66,7 +66,8 @@ namespace Scrabble
             {'j', 8},
             {'x', 8},
             {'q', 10},
-            {'z', 10}
+            {'z', 10},
+            {' ', 0}
         };
 
         public Dictionary<char,int> GetLetterScores()
