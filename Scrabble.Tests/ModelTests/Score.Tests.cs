@@ -26,6 +26,15 @@ namespace Scrabble.Tests
         }
 
         [TestMethod]
+        public void GetSetFinalScore_GetsSetsFinalScore_True()
+        {
+            Score newScore = new Score();
+            int test = 5;
+            newScore.SetFinalScore(test);
+            Assert.AreEqual(test, newScore.GetFinalScore());
+        }
+
+        [TestMethod]
         public void GetSetInputtedWordLetters_GetsSetsInputtedWordLetters_True()
         {
             Score newScore = new Score();
@@ -44,6 +53,14 @@ namespace Scrabble.Tests
             CollectionAssert.AreEqual(kevin.ToCharArray(), newScore.GetInputtedWordLetters());
         }
 
-
+        [TestMethod]
+        public void LettersIntoPoints_TurnsLettersIntoPoints_True()
+        {
+            Score newScore = new Score();
+            char[] test = {'a', 'b', 'c'};
+            newScore.SetInputtedWordLetters(test);
+            newScore.LettersIntoPoints();
+            Assert.AreEqual(7, newScore.GetFinalScore());
+        }
     }
 }

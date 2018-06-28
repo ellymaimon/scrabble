@@ -7,6 +7,7 @@ namespace Scrabble
     {
         private string _inputtedWord;
         private char[] _inputedWordLetters;
+        private int _finalScore = 0;
 
         public void SetInputtedWord(string inputtedWord)
         {
@@ -26,6 +27,16 @@ namespace Scrabble
         public char[] GetInputtedWordLetters()
         {
             return _inputedWordLetters;
+        }
+
+        public void SetFinalScore(int addToScore)
+        {
+            _finalScore += addToScore;
+        }
+
+        public int GetFinalScore()
+        {
+            return _finalScore;
         }
 
         private Dictionary<char, int> _letterScores = new Dictionary<char, int>()
@@ -66,6 +77,14 @@ namespace Scrabble
         public void WordIntoLetters()
         {
             SetInputtedWordLetters(GetInputtedWord().ToCharArray());
+        }
+
+        public void LettersIntoPoints()
+        {
+            for (int i = 0; i < GetInputtedWordLetters().Length; i++)
+            {
+                SetFinalScore(GetLetterScores()[GetInputtedWordLetters()[i]]);
+            }
         }
     }
 }
