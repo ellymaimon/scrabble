@@ -5,6 +5,29 @@ namespace Scrabble
 {
     public class Score
     {
+        private string _inputtedWord;
+        private char[] _inputedWordLetters;
+
+        public void SetInputtedWord(string inputtedWord)
+        {
+            _inputtedWord = inputtedWord;
+        }
+
+        public string GetInputtedWord()
+        {
+            return _inputtedWord;
+        }
+
+        public void SetInputtedWordLetters(char[] inputtedLetters)
+        {
+            _inputedWordLetters = inputtedLetters;
+        }
+
+        public char[] GetInputtedWordLetters()
+        {
+            return _inputedWordLetters;
+        }
+
         private Dictionary<char, int> _letterScores = new Dictionary<char, int>()
         {
             {'a', 1},
@@ -39,5 +62,10 @@ namespace Scrabble
         {
             return _letterScores;
         }
+
+        // public void WordIntoLetters()
+        // {
+        //     SetInputtedWordLetters(GetInputtedWord().ToCharArray());
+        // }
     }
 }

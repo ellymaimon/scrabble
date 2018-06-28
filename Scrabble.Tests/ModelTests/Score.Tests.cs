@@ -12,8 +12,28 @@ namespace Scrabble.Tests
         public void GetLetterScores_GetsLetterScoresDictionary_Value()
         {
             Score newScore = new Score();
-            int score = newScore.GetLetterScores()['a'];
-            Assert.AreEqual(score, 1);
+            int score = newScore.GetLetterScores()['z'];
+            Assert.AreEqual(score, 10);
         }
+
+        [TestMethod]
+        public void GetSetInputtedWord_GetsSetsInputtedWord_True()
+        {
+            Score newScore = new Score();
+            string test = "Hello";
+            newScore.SetInputtedWord(test);
+            Assert.AreEqual(test, newScore.GetInputtedWord());
+        }
+
+        [TestMethod]
+        public void GetSetInputtedWordLetters_GetsSetsInputtedWordLetters_True()
+        {
+            Score newScore = new Score();
+            char[] test = {'a', 'b', 'c'};
+            newScore.SetInputtedWordLetters(test);
+            Assert.AreEqual(test, newScore.GetInputtedWordLetters());
+        }
+
+
     }
 }
