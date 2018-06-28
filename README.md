@@ -1,18 +1,20 @@
-# Project Name Here
+# Scrabble Score Counter
 
-#### Epicodus C# exercise, date
+#### Epicodus C# exercise, June 28th, 2018
 
-#### By Your Name Here
+#### By Elly Maimon and Kevin Ahn
 
 ## Description
 
-Add a description here
+This program takes in a word and returns how many Scrabble points that word is worth.
 
 ## Specs
 
 | Behavior | Input | Output |
 |----------|-------|--------|
-| Behavior | input | output |
+| Program receives word and returns points value. | hi | 4 |
+| Program receives multiple words and returns points value. | hi hi | 8 |
+| Program receives words with capital letters and returns points value. | Hi | 4 |
 
 ## Setup on OSX
 
@@ -34,10 +36,10 @@ Add a description here
 
 ## Links
 
-* Add links here
+*
 
 ## License
 
 This software is licensed under the MIT license.
 
-Copyright (c) 2018 **Your Name Here**
+Copyright (c) 2018 **Elly Maimon & Kevin Ahn**
