@@ -34,6 +34,16 @@ namespace Scrabble.Tests
             Assert.AreEqual(test, newScore.GetInputtedWordLetters());
         }
 
+        [TestMethod]
+        public void WordIntoLetters_TurnsWordIntoWordLetters_True()
+        {
+            Score newScore = new Score();
+            string kevin = "kevin";
+            newScore.SetInputtedWord(kevin);
+            newScore.WordIntoLetters();
+            CollectionAssert.AreEqual(kevin.ToCharArray(), newScore.GetInputtedWordLetters());
+        }
+
 
     }
 }

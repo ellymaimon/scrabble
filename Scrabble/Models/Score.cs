@@ -63,9 +63,9 @@ namespace Scrabble
             return _letterScores;
         }
 
-        // public void WordIntoLetters()
-        // {
-        //     SetInputtedWordLetters(GetInputtedWord().ToCharArray());
-        // }
+        public void WordIntoLetters()
+        {
+            SetInputtedWordLetters(GetInputtedWord().ToCharArray());
+        }
     }
 }
