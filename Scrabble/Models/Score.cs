@@ -5,7 +5,7 @@ namespace Scrabble
 {
     public class Score
     {
-        Dictionary<char, int> letterScores = new Dictonary<char, int>()
+        private Dictionary<char, int> _letterScores = new Dictionary<char, int>()
         {
             {'a', 1},
             {'e', 1},
@@ -33,6 +33,11 @@ namespace Scrabble
             {'x', 8},
             {'q', 10},
             {'z', 10}
+        };
+
+        public Dictionary<char,int> GetLetterScores()
+        {
+            return _letterScores;
         }
     }
 }

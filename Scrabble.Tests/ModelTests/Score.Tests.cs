@@ -9,10 +9,11 @@ namespace Scrabble.Tests
     public class ScoreTest
     {
         [TestMethod]
-        public void DoIPass_TestToSeeIfThisWorks_True()
+        public void GetLetterScores_GetsLetterScoresDictionary_Value()
         {
             Score newScore = new Score();
-            Assert.AreEqual(,);
+            int score = newScore.GetLetterScores()['a'];
+            Assert.AreEqual(score, 1);
         }
     }
 }
