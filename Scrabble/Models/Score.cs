@@ -88,4 +88,18 @@ namespace Scrabble
             }
         }
     }
+
+    public class Program
+    {
+        public static void Main()
+        {
+            Score newGame = new Score();
+            Console.WriteLine("Enter a word to see it's scrabble points!");
+            string word = Console.ReadLine();
+            newGame.SetInputtedWord(word);
+            newGame.WordIntoLetters();
+            newGame.LettersIntoPoints();
+            Console.WriteLine(word + " is worth " + newGame.GetFinalScore() + " points.");
+        }
+    }
 }
